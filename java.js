@@ -1,40 +1,17 @@
-partij = {"A" : 0, "B" : 0, "C" : 0, "D" : 0}
-
-voorbeeld = "A D";
-x = voorbeeld;
-
-function eens(x)
+UserAwnsers = [];
+inputs = 0;
+progressvar = (100 / 33);
+function AwnserSubmit(x)
 {
-    y = x.split(" ");
-    z = 0;
-    foreach(y)
-    {
-        z++
-        partij[z]++;
-    }
+    UserAwnsers[inputs] = x;
+    inputs++;
+    console.log(UserAwnsers);
+    document.getElementById("progressbar").style.width = (inputs*progressvar) + "%"
+    /* console.log(inputs) */
 }
-eens();
-
-function eens(x)
+function GoBack(x)
 {
-    y = x.split(" ");
-    z = 0;
-    foreach(y)
-    {
-        z++
-        partij[z]++;
-    }
+    inputs--;
+    document.getElementById("progressbar").style.width = (inputs*progressvar) + "%"
+    /* console.log(inputs) */
 }
-eens();
-
-function oneens(x)
-{
-    y = x.split(" ");
-    z = 0;
-    foreach(y)
-    {
-        z++
-        partij[z]++;
-    }
-}
-oneens();

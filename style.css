@@ -1,5 +1,151 @@
-body{
+body
+{
     background-image: url(./images/achtergrond.png); 
     background-repeat: no-repeat;
     background-size: cover;
 }
+#Maincontainer
+{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: whitesmoke;
+    /* border: gainsboro 3px solid; */
+}
+#SubContainer
+{
+    width: 86%;
+    padding: 1% 7% 1% 7%;
+}
+/*#region progressbar*/
+#progressbarcontainer
+{
+    height: 5px;
+    width: 100%;
+    background-color: antiquewhite;
+}
+#progressbar
+{
+    height: 5px;
+    width: 0%;
+    background-color: aqua;
+    transition: width 1s;
+}
+/*#endregion*/
+/*#region Button Terug*/
+#ButtonTerug
+{
+    width: 50px;
+    height: 50px;
+    background-color: gainsboro;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    transition: background-color .3s;
+}
+#ButtonTerug:hover
+{
+    background-color:rgb(199, 199, 199);
+}
+#ButtonTerug:active
+{
+    box-shadow: 0px 0px 0px 2px rgb(122, 122, 122);
+}
+/*#endregion*/
+
+#VraagContainer
+{
+    height: 500px;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    
+}
+.ButtonAntwoord
+{
+    font-size: 30px;
+    padding: 7px 28px 7px 28px;
+    margin: 2%;
+}
+.ButtonBorder
+{
+    border: 3px solid;
+    border-radius: 10px;
+    border-color: whitesmoke;
+    box-shadow: none;
+    outline: none;
+}
+/*#region Button Eens*/
+#ButtonEens             
+{
+    background-color: lightgreen;
+    color: white;
+    margin-left: 0px;
+}
+#ButtonEens:hover
+{
+    background-color: rgb(118, 196, 118);
+}
+#ButtonEens:active
+{
+    box-shadow: 0px 0px 0px 2px rgb(75, 121, 75);
+}
+
+/*#endregion*/
+/*#region Button Gvb*/
+#ButtonGvb                
+{
+    background-color: gainsboro;
+    color: black;
+}
+#ButtonGvb:hover
+{
+    background-color: rgb(180, 180, 180);
+}
+#ButtonGvb:active
+{
+    box-shadow: 0px 0px 0px 2px rgb(122, 122, 122);
+}
+/*#endregion*/
+/*#region Button Onees*/
+#ButtonOneens              
+{
+    background-color: orangered;
+    color: white;
+}
+#ButtonOneens:hover
+{
+    background-color: rgb(209, 58, 3);
+}
+#ButtonOneens:active
+{
+    box-shadow: 0px 0px 0px 2px rgb(146, 39, 0);
+}
+
+/*#endregion*/
+/*#region Button Overslaan*/
+#ButtonOverslaan
+{
+    background-color: gainsboro;
+    border-radius: 15px;
+    font-size: 20px;
+    color: rgb(122, 122, 122);
+    margin-left: 7.5%;
+    padding: 7px 7px 7px 14px;
+}
+#ButtonOverslaan:active
+{
+    box-shadow: 0px 0px 0px 2px rgb(122, 122, 122);
+}
+#AnimateArrow
+{
+    padding-right: 7px;
+    transition: padding 0.5s;
+}
+#ButtonOverslaan:hover #AnimateArrow
+{
+    padding-left: 7px;
+    padding-right: 0px;
+}
+/*#endregion*/

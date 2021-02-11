@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <link rel ="stylesheet" href="../style.css">
+        <title>StemWijzer</title>
+        
+        <script src="https://kit.fontawesome.com/89f724c9b8.js" crossorigin="anonymous"></script>
+        <script src="../java.js"></script>
+        <script src="../js.js"></script>
+        <script src="http://stemwijzer.dvc-icta.nl/data.js"></script>
+    </head>
+    <script>console.log(subjects)</script>
+
+    <body>
+        
+        <div id="Maincontainer">
+            <div id="progressbarcontainer">
+                <div id="progressbar"></div>
+            </div>
+            <div>
+                <button id="ButtonTerug" class="ButtonBorder" onclick="GoBack()"><i class="fas fa-2x fa-arrow-left"></i></button>
+            </div>
+            <div id="SubContainer">
+                <div id="VraagContainer">
+                    <div id="VraagOnderwerp">Maatschappelijke dienstplicht</div>
+                    <div id="Vraag">Er moet een maatschappelijke dienstplicht voor jongeren komen. Zij kunnen dan dienen in het leger, bij de politie of in de zorg.</div>
+                </div>
+                <div id="ButtonContainer">
+                    <button id="ButtonEens" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('pro')">Eens</button>
+                    <button id="ButtonGvb" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('none')">Geen van Bijde</button>
+                    <button id="ButtonOneens" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('contra')">Oneens</button>
+                    <button id="ButtonOverslaan" class="ButtonBorder"  onclick="AwnserSubmit('N/A')">Overslaan &nbsp &nbsp<i id="AnimateArrow" class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+        </div>
+        
+    </body>
+
+</html>
