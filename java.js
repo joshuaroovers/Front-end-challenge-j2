@@ -6,12 +6,20 @@ function AwnserSubmit(x)
     UserAwnsers[inputs] = x;
     inputs++;
     console.log(UserAwnsers);
-    document.getElementById("progressbar").style.width = (inputs*progressvar) + "%"
+    document.getElementById("progressbar").style.width = (inputs*progressvar) + "%";
     /* console.log(inputs) */
+    NextQuestion(inputs-1);
 }
-function GoBack(x)
+function GoBack()
 {
     inputs--;
-    document.getElementById("progressbar").style.width = (inputs*progressvar) + "%"
+    document.getElementById("progressbar").style.width = (inputs*progressvar) + "%";
     /* console.log(inputs) */
+    NextQuestion(inputs-1);
+}
+
+function NextQuestion(x)
+{
+    document.getElementById("VraagOnderwerp").innerHTML = subjects[x].title;
+    document.getElementById("Vraag").innerHTML = subjects[x].statement;
 }
