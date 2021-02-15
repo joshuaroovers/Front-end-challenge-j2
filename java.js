@@ -1,8 +1,8 @@
 UserAwnsers = [];
 inputs = 0;
-progressvar = (100 / 33);
+progressvar = (100 / (subjects.length + 3));
 function AwnserSubmit(x)
-{
+{  
     UserAwnsers[inputs] = x;
     inputs++;
     console.log(UserAwnsers);

@@ -5,32 +5,83 @@ body
     background-size: cover;
 }
 /*#region startscherm*/
+#BlockLeft
+{
+    float: left;
+    width: 65%;
+    height: 100%;
+}
 #BlockStart
 {
-
+    position: relative;
+    width: 85%;
+    height: 35%;
+    background-color: whitesmoke;
+    padding: 7.5%;
+    border-radius: 20px;
 }
 #Block1
 {
-
+    margin-top: -20px;
+    width: 85%;
+    height: 35%;
+    float: right;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    border-bottom-left-radius: 20px;
+    padding: 3.75%;
+    padding-top: calc(3.75% + 20px);
 }
 #Block2
 {
-    
+    margin-top: 50px;
+    float: right;
+    width: 35%;
+    height: calc(90% - 50px);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
+/*#region Button Start*/
 #ButtonStart
 {
-    background-color: b;
+    background-color: rgb(50, 50, 255);
+    color: white;
+    margin-left: 0px;
 }
-
+#ButtonStart:hover
+{
+    background-color: rgb(50, 50, 220);
+}
+#ButtonStart:active
+{
+    background-color: rgb(50, 50, 220);
+    box-shadow: 0px 0px 0px 2px rgb(50, 50, 180);
+}
+/*#endregion*/
+.StartTitle
+{
+    font-size: 60px;
+    font-weight: 500;
+    font-family: 'Bree Serif';
+}
+#StartTitleS
+{
+    color: rgb(50, 50, 255);
+}
+#StartTitleW
+{
+    color: black;
+}
 /*#endregion*/
 
 #Maincontainer
 {
     width: 70%;
+    height: 700px;
     margin-left: 15%;
     margin-right: 15%;
-    background-color: whitesmoke;
-    /* border: gainsboro 3px solid; */
 }
 #SubContainer
 {
@@ -40,15 +91,15 @@ body
 /*#region progressbar*/
 #progressbarcontainer
 {
-    height: 5px;
+    height: 7px;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: inherit;
 }
 #progressbar
 {
-    height: 5px;
+    height: 100%;
     width: 0%;
-    background-color: aqua;
+    background-color: rgb(50, 50, 255);
     transition: width 1s;
 }
 /*#endregion*/
@@ -83,7 +134,7 @@ body
 }
 #VraagOnderwerp
 {
-    color: cornflowerblue;
+    color: rgb(50, 50, 255);
     margin-bottom: 30px;
 }
 .ButtonAntwoord
