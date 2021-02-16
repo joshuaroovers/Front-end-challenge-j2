@@ -3,7 +3,7 @@
     <head>
         <link rel ="stylesheet" href="../style.css">
         <title>StemWijzer</title>
-        
+        <link href='https://fonts.googleapis.com/css?family=Bree Serif' rel='stylesheet'>
         <script src="https://kit.fontawesome.com/89f724c9b8.js" crossorigin="anonymous"></script>
         <script src="http://stemwijzer.dvc-icta.nl/data.js"></script>
         <script src="../java.js"></script>
@@ -14,26 +14,39 @@
 
     <body>
         
-        <div id="Maincontainer">
-            <div id="progressbarcontainer">
-                <div id="progressbar"></div>
-            </div>
-            <div>
-                <button id="ButtonTerug" class="ButtonBorder" onclick="GoBack()"><i class="fas fa-2x fa-arrow-left"></i></button>
-            </div>
-            <div id="SubContainer">
-                <div id="VraagContainer">
-                    <div id="VraagOnderwerp">If everything works right</div>
-                    <div id="Vraag">you shouldn't see this</div>
+        <div id="MainContainer">
+            <div id="SectionStart">
+                <div id="BlockLeft">
+                    <div id="BlockStart">
+                        <div id="StartTitleContainer"><span id="StartTitleS" class="StartTitle">Stem</span><span id="StartTitleW"  class="StartTitle">Wijzer</span></div>
+                        <div id="StartSubTitle">Tweede Kamer&shy;verkiezingen 2021</div>
+                        <div id="StartSubSubTitle">Test je politieken voorkeur aan de hand van 30 stellingen</div>
+                        <button id="ButtonStart" class="ButtonAntwoord ButtonBorder" onclick="ButtonStart()">Start</button>
+                    </div>
+                    <div id="Block1"></div>
                 </div>
-                <div id="ButtonContainer">
-                    <button id="ButtonEens" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('pro')">Eens</button>
-                    <button id="ButtonGvb" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('none')">Geen van Bijde</button>
-                    <button id="ButtonOneens" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('contra')">Oneens</button>
-                    <button id="ButtonOverslaan" class="ButtonBorder"  onclick="AwnserSubmit('N/A')">Overslaan &nbsp &nbsp<i id="AnimateArrow" class="fas fa-arrow-right"></i></button>
+                <div id="Block2"></div>
+            </div>
+            <div id="SectionVragen">
+                <div id="progressbarcontainer">
+                    <div id="progressbar"></div>
+                </div>
+                <div>
+                    <button id="ButtonTerug" class="ButtonBorder" onclick="GoBack()"><i class="fas fa-2x fa-arrow-left"></i></button>
+                </div>
+                <div id="SubContainer">
+                    <div id="VraagContainer">
+                        <div id="VraagOnderwerp">If everything works right</div>
+                        <div id="Vraag">you shouldn't see this</div>
+                    </div>
+                    <div id="ButtonContainer">
+                        <button id="ButtonEens" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('pro')"><i class="fas fathumbs fa-flip-vertical fa-thumbs-down"></i>Eens</button>
+                        <button id="ButtonGvb" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('none')">Geen van Bijde</button>
+                        <button id="ButtonOneens" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('contra')"><i class="fas fathumbs fa-flip-horizontal fa-thumbs-down"></i>Oneens</button>
+                        <button id="ButtonOverslaan" class="ButtonBorder"  onclick="AwnserSubmit('N/A')">Overslaan &nbsp &nbsp<i id="AnimateArrow" class="fas fa-arrow-right"></i></button>
+                    </div>
                 </div>
             </div>
-
         </div>
         
     </body>

@@ -1,10 +1,24 @@
 body
 {
+    font-family: Arial, Helvetica, sans-serif;
     background-image: url(./images/achtergrond.png); 
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#MainContainer
+{
+    width: 70%;
+    height: 700px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
 /*#region startscherm*/
+#SectionStart
+{
+    height: 100%;
+    width: 100%;
+}
 #BlockLeft
 {
     float: left;
@@ -15,9 +29,10 @@ body
 {
     position: relative;
     width: 85%;
-    height: 35%;
+    height: 45%;
     background-color: whitesmoke;
     padding: 7.5%;
+    padding-top: 5%;
     border-radius: 20px;
 }
 #Block1
@@ -34,10 +49,10 @@ body
 }
 #Block2
 {
-    margin-top: 50px;
+    margin-top: 5%;
     float: right;
     width: 35%;
-    height: calc(90% - 50px);
+    height: calc(45% + 35% + 15% - 5% + 15px);
     background-color: rgba(0, 0, 0, 0.9);
     color: white;
     border-top-right-radius: 20px;
@@ -60,6 +75,10 @@ body
     box-shadow: 0px 0px 0px 2px rgb(50, 50, 180);
 }
 /*#endregion*/
+#StartTitleContainer
+{
+    margin-bottom: 20px;
+}
 .StartTitle
 {
     font-size: 60px;
@@ -74,14 +93,25 @@ body
 {
     color: black;
 }
+#StartSubTitle
+{
+    font-weight: 700;
+    font-size: 35px;
+    padding: 5px;
+    padding-left: 0px;
+}
+#StartSubSubTitle
+{
+    font-size: 22px;
+    margin-bottom: 80px;
+}
 /*#endregion*/
 
-#Maincontainer
+#SectionVragen
 {
-    width: 70%;
-    height: 700px;
-    margin-left: 15%;
-    margin-right: 15%;
+    display: none;
+    height: 100%;
+    width: 100%;
 }
 #SubContainer
 {
@@ -140,16 +170,23 @@ body
 .ButtonAntwoord
 {
     font-size: 30px;
-    padding: 7px 28px 7px 28px;
+    padding: 14px 28px 14px 28px;
     margin: 2%;
+    transition: background-color 0.2s;
 }
 .ButtonBorder
 {
     border: 3px solid;
-    border-radius: 10px;
+    border-radius: 15px;
     border-color: whitesmoke;
     box-shadow: none;
     outline: none;
+    cursor: pointer;
+}
+.fathumbs
+{
+    font-size: 20px;
+    margin-right: 14px;
 }
 /*#region Button Eens*/
 #ButtonEens             
@@ -209,7 +246,7 @@ body
     border-radius: 15px;
     font-size: 20px;
     color: rgb(122, 122, 122);
-    margin-left: 7.5%;
+    margin-left: 1%;
     padding: 7px 7px 7px 14px;
 }
 #ButtonOverslaan:active
