@@ -5,12 +5,15 @@
         <title>StemWijzer</title>
         <link href='https://fonts.googleapis.com/css?family=Bree Serif' rel='stylesheet'>
         <script src="https://kit.fontawesome.com/89f724c9b8.js" crossorigin="anonymous"></script>
-        <!-- <script src="http://stemwijzer.dvc-icta.nl/data.js"></script> -->
-        <script src="../js.js"></script>
+        <script src="http://stemwijzer.dvc-icta.nl/data.js"></script>
+        <!-- <script src="../js.js"></script> -->
         <script src="../java.js"></script>
         
     </head>
-    <script>console.log(subjects)</script>
+    <script>
+        console.log(subjects)
+        console.log(parties)
+    </script>
 
     <body>
         
@@ -27,13 +30,15 @@
                 </div>
                 <div id="Block2"></div>
             </div>
-            <div id="SectionVragen">
+            <div id="SectionProgressbar">
                 <div id="progressbarcontainer">
                     <div id="progressbar"></div>
                 </div>
                 <div>
                     <button id="ButtonTerug" class="ButtonBorder" onclick="GoBack()"><i class="fas fa-2x fa-arrow-left"></i></button>
                 </div>
+            </div>
+            <div id="SectionVragen">
                 <div id="SubContainer">
                     <div id="VraagContainer">
                         <div id="VraagOnderwerp">If everything works right</div>
@@ -47,6 +52,51 @@
                     </div>
                 </div>
             </div>
+            <div id="SectionSpecS">
+                <div id="SubContainer">
+                    <div id="SpecVraagContainer">
+                        <div>
+                            <div id="SpecVraag">Zijn er onderwerpen die je extra belangrijk vindt?</div>
+                            <button id="ButtonVolg" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('VS')">Volgende Stap</button>
+                        </div>
+                        <div id="SpecSCount"><span>0</span><span>/0 stellingen geslecteerd</span></div>
+                    </div>
+    
+                </div>
+                <div class="SpecContainer">
+                    <div id="SC1S" class="SpecCollumn"></div>
+                    <div id="SC2S" class="SpecCollumn"></div>
+                    <div id="SC3S" class="SpecCollumn"></div>
+                    <script id="CreateButtons">
+                        SpecCreateButton("S"); 
+                        document.getElementById("SpecSCount").lastChild.innerHTML = "/" + subjects.length + " stellingen geslecteerd";
+                    </script>
+                    
+                </div>
+                
+            </div>
+            <div id="SectionSpecP">
+                <div id="SubContainer">
+                    <div id="SpecVraagContainer">
+                        <div>
+                            <div id="SpecVraag">Welke partijen wil je mee nemen in het resultaat?</div>
+                            <button id="ButtonVolg" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('VS')">Volgende Stap</button>
+                        </div>
+                        <div id="SpecSCount"><span></span></div>
+                    </div>
+    
+                </div>
+                <div class="SpecContainer">
+                    <div id="SC1P" class="SpecCollumn"></div>
+                    <div id="SC2P" class="SpecCollumn"></div>
+                    <div id="SC3P" class="SpecCollumn"></div>
+                    <script id="CreateButtons">
+                        SpecCreateButton("P"); 
+                        
+                    </script>
+                    
+                </div>
+            </div> 
         </div>
         
     </body>

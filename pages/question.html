@@ -6,49 +6,59 @@
         
         <script src="https://kit.fontawesome.com/89f724c9b8.js" crossorigin="anonymous"></script>
         <script src="http://stemwijzer.dvc-icta.nl/data.js"></script>
-        <script src="../java.js"></script>
         <!-- <script src="../js.js"></script> -->
+        <script src="../java.js"></script>
+        
         
         
     </head>
-    <script>console.log(subjects)</script>
+    <script>
+        console.log(UserAwnsers["none", "contra", "N/A","pro","V/S","V/S"])
+        console.log(SelecVragen[true, false, false, false])
+        console.log(SelecParties[true, true, false, true])
+    </script>
 
     <body>
         
         <div id="MainContainer">
-            <div id="VragenContainer">
+            <div id="SectionProgressbar">
                 <div id="progressbarcontainer">
                     <div id="progressbar"></div>
                 </div>
                 <div>
                     <button id="ButtonTerug" class="ButtonBorder" onclick="GoBack()"><i class="fas fa-2x fa-arrow-left"></i></button>
                 </div>
-                <div id="SubContainer">
-                    <div id="SpecVraagContainer">
-                        <div>
-                            <div>would you like a kiss</div>
-                            <button class="ButtonAntwoord ButtonBorder">Volgende Stap</button>
-                        </div>
-                        <div><span>X</span><span>/30</span></div>
+            </div>
+            <div id="SectionResults">
+                <div id="ResultsContainer">
+                    <div id="TEST">
+                        <div>naam</div>
                     </div>
-     
-                </div>
-                <div id="SpecContainer">
-                    <div id="SC1" class="SpecCollumn"></div>
-                    <div id="SC2" class="SpecCollumn"></div>
-                    <div id="SC3" class="SpecCollumn"></div>
-                    <script>
-                        SpecCreateButton()
-                    </script>
-                    
+                    <!-- <div id="Result1">
+                        <div>
+                            <div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div id="Result2">
+
+                    </div>
+                    <div id="Result3">
+
+                    </div> -->
                 </div>
             </div>
         </div>
         <script>
             document.getElementById("MainContainer").style.backgroundColor = "whitesmoke"
-            document.getElementById("VragenContainer").style.display = "unset"
-            inputs = 1;
-            </script>
+            document.getElementById("SectionProgressbar").style.display = "block"
+            document.getElementById("progressbar").style.width = (100 / subjects.length + 3 * subjects.length + 2) + "%";
+        </script>
     </body>
 
 </html>

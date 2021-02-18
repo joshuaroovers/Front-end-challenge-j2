@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <link rel ="stylesheet" href="../style.css">
+        <title>StemWijzer</title>
+        
+        <script src="https://kit.fontawesome.com/89f724c9b8.js" crossorigin="anonymous"></script>
+        <script src="http://stemwijzer.dvc-icta.nl/data.js"></script>
+        <!-- <script src="../js.js"></script> -->
+        <script src="../java.js"></script>
+        
+        
+        
+    </head>
+    <script>
+        console.log(UserAwnsers["none", "contra", "N/A","pro","V/S","V/S"])
+        console.log(SelecVragen[true, false, false, false])
+        console.log(SelecParties[true, true, false, true])
+    </script>
+
+    <body>
+        
+        <div id="MainContainer">
+            <div id="SectionProgressbar">
+                <div id="progressbarcontainer">
+                    <div id="progressbar"></div>
+                </div>
+                <div>
+                    <button id="ButtonTerug" class="ButtonBorder" onclick="GoBack()"><i class="fas fa-2x fa-arrow-left"></i></button>
+                </div>
+            </div>
+            <div id="SectionSpecP">
+                <div id="SubContainer">
+                    <div id="SpecVraagContainer">
+                        <div>
+                            <div id="SpecVraag">Welke partijen wil je mee nemen in het resultaat?</div>
+                            <button id="ButtonVolg" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('VS')">Volgende Stap</button>
+                        </div>
+                        <div id="SpecSCount"><span></span></div>
+                    </div>
+    
+                </div>
+                <div class="SpecContainer">
+                    <div>
+                        <button>
+
+                        </button>
+                        <button>
+                            
+                        </button>
+                    </div>
+                    <div id="SC1P" class="SpecCollumn"></div>
+                    <div id="SC2P" class="SpecCollumn"></div>
+                    <div id="SC3P" class="SpecCollumn"></div>
+                    <script id="CreateButtons">
+                        SpecCreateButton("P"); 
+                        
+                    </script>
+                    
+                </div>
+            </div> 
+        </div>
+        <script>
+            document.getElementById("MainContainer").style.backgroundColor = "whitesmoke"
+            document.getElementById("SectionProgressbar").style.display = "block"
+            document.getElementById("SectionSpecP").style.display = "block"
+            document.getElementById("progressbar").style.width = (100 / subjects.length + 3 * subjects.length + 2) + "%";
+        </script>
+    </body>
+
+</html>
