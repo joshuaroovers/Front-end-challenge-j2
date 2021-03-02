@@ -5,8 +5,8 @@
         <title>StemWijzer</title>
         <link href='https://fonts.googleapis.com/css?family=Bree Serif' rel='stylesheet'>
         <script src="https://kit.fontawesome.com/89f724c9b8.js" crossorigin="anonymous"></script>
-        <!-- <script src="http://stemwijzer.dvc-icta.nl/data.js"></script> -->
-        <script src="../voorbeeld.js"></script>
+        <script src="http://stemwijzer.dvc-icta.nl/data.js"></script>
+        <!-- <script src="../voorbeeld.js"></script> -->
         
         
     </head>
@@ -57,7 +57,7 @@
                     <div id="SpecVraagContainer">
                         <div>
                             <div id="SpecVraag">Zijn er onderwerpen die je extra belangrijk vindt?</div>
-                            <button id="ButtonVolg" class="ButtonAntwoord ButtonBorder" >Volgende Stap</button>
+                            <button id="ButtonVolgS" class="ButtonVolg ButtonAntwoord ButtonBorder" >Volgende Stap</button>
                         </div>
                         <div id="SpecSCount"><span>0</span><span>/0 stellingen geslecteerd</span></div>
                     </div>
@@ -75,22 +75,29 @@
                     <div id="SpecVraagContainer">
                         <div>
                             <div id="SpecVraag">Welke partijen wil je mee nemen in het resultaat?</div>
-                            <button id="ButtonVolg" class="ButtonAntwoord ButtonBorder">Volgende Stap</button>
+                            <button id="ButtonVolgP" class="ButtonVolg ButtonAntwoord ButtonBorder">Volgende Stap</button>
                         </div>
                         <div id="SpecSCount"><span></span></div>
                     </div>
     
                 </div>
                 <div class="SpecContainer">
-                    <!-- <div>
-                        <button >
+                    <div id="ButtonGroupContainer">
+                        <button id="ButtonSpecGroot" class="ButtonSpecGroup">
                             <span class="fa-stack">
-                                <i class="fas facolorbox fa-square fa-stack-2x fa-2x"></i>
-                                <i class="SpecNotSelected facolorcheck fas fa-check fa-stack-1x"></i>
+                                <i class="fas facolorboxalt fa-square fa-stack-2x fa-2x"></i>
+                                <i id="GroupLfa" class="SpecNotSelected facolorcheck fas fa-check fa-stack-1x"></i>
                             </span>
-                            <span></span>
+                            <span>Grote partijen</span>
                         </button>
-                    </div> -->
+                        <button id="ButtonSpecSeculier" class="ButtonSpecGroup">
+                            <span class="fa-stack">
+                                <i class="fas facolorboxalt fa-square fa-stack-2x fa-2x"></i>
+                                <i id="GroupSfa" class="SpecNotSelected facolorcheck fas fa-check fa-stack-1x"></i>
+                            </span>
+                            <span>Seculiere partijen</span>
+                        </button>
+                    </div>
                     <div id="SC1P" class="SpecCollumn"></div>
                     <div id="SC2P" class="SpecCollumn"></div>
                     <div id="SC3P" class="SpecCollumn"></div>                    

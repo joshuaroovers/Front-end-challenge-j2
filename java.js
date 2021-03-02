@@ -2,17 +2,29 @@ UserAwnsers = [];
 inputs = 0;
 SelecVragen = [];
 SelecParties = [];
+
+/* LargePartyId = [];
+NonLargePartyId = [];
+SeculierPartyId = [];
+NonSeculierPartyId = []; */
+
+LargeParties = false;
+SecularParties = false;
+
 progressvar = (100 / (subjects.length + 3));
 SpecSCount = 0;
 
 
-    document.getElementById("ButtonStart").onclick = function() {ButtonStart()}
+    /* document.getElementById("ButtonStart").onclick = function() {ButtonStart()}
     document.getElementById("ButtonTerug").onclick = function() {GoBack()}
     document.getElementById("ButtonEens").onclick = function() {AwnserSubmit("pro")}
     document.getElementById("ButtonGvb").onclick = function() {AwnserSubmit("none")}
     document.getElementById("ButtonOneens").onclick = function() {AwnserSubmit("contra")}
     document.getElementById("ButtonOverslaan").onclick = function() {AwnserSubmit("N/A")}
-    document.getElementById("ButtonVolg").onclick = function() {AwnserSubmit("VS")}
+    document.getElementById("ButtonVolgS").onclick = function() {AwnserSubmit("VS")}
+    document.getElementById("ButtonVolgP").onclick = function() {AwnserSubmit("VS")}
+    document.getElementById("ButtonSpecGroot").onclick = function() {ButtonGroup("L")}
+    document.getElementById("ButtonSpecSeculier").onclick = function() {ButtonGroup("S")} */
 
 function ButtonStart()
 {
@@ -30,9 +42,6 @@ function AwnserSubmit(awnser)
 {  
     UserAwnsers[inputs-1] = awnser;
     inputs++;
-    console.log(UserAwnsers);
-    console.log(SelecVragen);
-    console.log(SelecParties);
     document.getElementById("progressbar").style.width = (inputs*progressvar) + "%";
     console.log(inputs)
     if(inputs <= subjects.length)
@@ -66,7 +75,9 @@ function AwnserSubmit(awnser)
     else if(inputs == subjects.length + 3)
     {
         document.getElementById("SectionSpecP").style.display = "none";
-        /* document.getElementById("SectionResults").style.display = "block"; */
+        /* document.getElementById("SectionResults").style.display = "block";
+        CalcResults() */
+        
     }
     
 }
@@ -138,7 +149,7 @@ function SpecCreateButton(y)
         {
             button = document.createElement("button")
             button.classList.add("ButtonSpec", "ButtonBorder")
-            button.id = array.indexOf(x)
+            button.id = array.indexOf(x) + y;
             if(y == "S")
             {
                 button.onclick = SpecVraagS;
@@ -201,13 +212,22 @@ function SpecCreateButton(y)
         }
     }
 }
-SpecCreateButton("S")
+/* SpecCreateButton("S")
 document.getElementById("SpecSCount").lastChild.innerHTML = "/" + subjects.length + " stellingen geslecteerd";
-SpecCreateButton("P")
+SpecCreateButton("P") */
 
 function SpecVraagS()
 {
-    index = this.id
+    fullid = this.id.split("");
+    if(fullid.length == 2)
+    {
+        index = fullid[0];
+    }
+    else
+    {
+        index = fullid[0] + fullid[1];
+    }
+    
     SBid = "SBS" + index;
     
     if(SelecVragen[index] == true)
@@ -229,7 +249,15 @@ function SpecVraagS()
 
 function SpecVraagP()
 {
-    index = this.id
+    fullid = this.id.split("");
+    if(fullid.length == 2)
+    {
+        index = fullid[0];
+    }
+    else
+    {
+        index = fullid[0] + fullid[1];
+    }
     SBid = "SBP" + index;
     
     if(SelecParties[index] == true)
@@ -244,6 +272,95 @@ function SpecVraagP()
     }
     console.log(SelecParties)
 }
+
+function ButtonGroup(x)
+{   
+    if(x == "L")
+    {
+        if(LargeParties == false)
+        {
+            LargeParties = true;
+            parties.forEach(Checksize)
+            function Checksize(x)
+            {
+                SBid = "SBP" + parties.indexOf(x);
+        
+                if(x.size >= 10 && x.name != "Niet Stemmers")
+                {
+                    document.getElementById(SBid).classList.replace("SpecNotSelected", "SpecSelected")
+                    SelecParties[parties.indexOf(x)] = true
+                }
+                else if(x.name != "Niet Stemmers")
+                {
+                    document.getElementById(SBid).classList.replace("SpecSelected", "SpecNotSelected")
+                    SelecParties[parties.indexOf(x)] = false
+                }
+            }
+            document.getElementById("GroupLfa").classList.replace("SpecNotSelected", "SpecSelected")
+        }
+        else
+        {
+            LargeParties = false;
+            parties.forEach(Checksize)
+            function Checksize(x)
+            {
+                SBid = "SBP" + parties.indexOf(x);
+        
+                if(x.size >= 10 && x.name != "Niet Stemmers")
+                {
+                    document.getElementById(SBid).classList.replace("SpecSelected", "SpecNotSelected")
+                    SelecParties[parties.indexOf(x)] = false
+                }
+            }
+            document.getElementById("GroupLfa").classList.replace("SpecSelected", "SpecNotSelected")
+        }
+    }
+    else if(x == "S")
+    {
+        if(SecularParties == false)
+        {
+            SecularParties = true;
+            parties.forEach(CheckSec)
+            function CheckSec(x)
+            {
+                SBid = "SBP" + parties.indexOf(x);
+        
+                if(x.secular == true && x.name != "Niet Stemmers")
+                {
+                    document.getElementById(SBid).classList.replace("SpecNotSelected", "SpecSelected")
+                    SelecParties[parties.indexOf(x)] = true
+                }
+                else if(x.name != "Niet Stemmers")
+                {
+                    document.getElementById(SBid).classList.replace("SpecSelected", "SpecNotSelected")
+                    SelecParties[parties.indexOf(x)] = false
+                }
+            }
+            document.getElementById("GroupSfa").classList.replace("SpecNotSelected", "SpecSelected")
+        }
+        else
+        {
+            SecularParties = false;
+            parties.forEach(Checksize)
+            function Checksize(x)
+            {
+                SBid = "SBP" + parties.indexOf(x);
+        
+                if(x.secular == true && x.name != "Niet Stemmers")
+                {
+                    document.getElementById(SBid).classList.replace("SpecSelected", "SpecNotSelected");
+                    SelecParties[parties.indexOf(x)] = false;
+                }
+            }
+            document.getElementById("GroupSfa").classList.replace("SpecSelected", "SpecNotSelected");
+        }
+    }
+}
+
+/* function CalcResults()
+{
+
+} */
 
 
 
