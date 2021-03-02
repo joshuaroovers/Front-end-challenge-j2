@@ -6,19 +6,16 @@
         
         <script src="https://kit.fontawesome.com/89f724c9b8.js" crossorigin="anonymous"></script>
         <script src="http://stemwijzer.dvc-icta.nl/data.js"></script>
-        <!-- <script src="../js.js"></script> -->
-        <script src="../java.js"></script>
-        
+        <!-- <script src="../js.js"></script> -->      
         
         
     </head>
-    <script>
-        console.log(UserAwnsers["none", "contra", "N/A","pro","V/S","V/S"])
-        console.log(SelecVragen[true, false, false, false])
-        console.log(SelecParties[true, true, false, true])
-    </script>
+    
 
     <body>
+        <div style="display: none;">
+            <button></button>
+        </div>
         
         <div id="MainContainer">
             <div id="SectionProgressbar">
@@ -26,39 +23,76 @@
                     <div id="progressbar"></div>
                 </div>
                 <div>
-                    <button id="ButtonTerug" class="ButtonBorder" onclick="GoBack()"><i class="fas fa-2x fa-arrow-left"></i></button>
+                    <button id="ButtonTerug" class="ButtonBorder"><i class="fas fa-2x fa-arrow-left"></i></button>
                 </div>
             </div>
             <div id="SectionResults">
                 <div id="ResultsContainer">
-                    <div id="TEST">
-                        <div>naam</div>
-                    </div>
-                    <!-- <div id="Result1">
-                        <div>
-                            <div>
-                                <div></div>
+
+                    <div id="Result1" class="PercentileResult">
+                        <div id="PercentileContainer">
+                            <div id="PercentileSubContainer">
+                                <div id="Perc1">100%</div>
                             </div>
                         </div>
                         <div>
-                            <div></div>
-                            <div></div>
+                            <div id="PercName1" class="PercentileResultName">Naam</div>
                         </div>
                     </div>
-                    <div id="Result2">
-
+                    <div id="Result2" class="PercentileResult">
+                        <div id="PercentileContainer">
+                            <div id="PercentileSubContainer">
+                                <div id="Perc2">50%</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="PercName2" class="PercentileResultName">Forum van Democratie</div>
+                        </div>
                     </div>
-                    <div id="Result3">
-
-                    </div> -->
+                    <div id="Result3" class="PercentileResult">
+                        <div id="PercentileContainer">
+                            <div id="PercentileSubContainer">
+                                <div id="Perc3">2%</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="PercName3" class="PercentileResultName">Naam</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="PercentileAltContainer">
+                    <div class="PercentileAltResult">
+                        <div>
+                            <div class="PerentilceAltBarContainer">
+                                <div class="PercentileBar"></div>
+                            </div>
+                            <div class="PercAlt">55%</div>
+                        </div>
+                        <div>Forum van Democratie</div>
+                    </div>
+                    <div class="PercentileAltResult">
+                        <div>
+                            <div class="PerentilceAltBarContainer">
+                                <div class="PercentileBar"></div>
+                            </div>
+                            <div class="PercAlt">55%</div>
+                        </div>
+                        <div>Forum van Democratie</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <script>
-            document.getElementById("MainContainer").style.backgroundColor = "whitesmoke"
-            document.getElementById("SectionProgressbar").style.display = "block"
-            document.getElementById("progressbar").style.width = (100 / subjects.length + 3 * subjects.length + 2) + "%";
-        </script>
+        
     </body>
-
+    <script src="../java.js"></script>
+    <script>
+        document.getElementById("MainContainer").style.backgroundColor = "whitesmoke"
+        document.getElementById("SectionProgressbar").style.display = "block"
+        document.getElementById("progressbar").style.width = 100 + "%";
+    </script>
+<!--     <script>
+        console.log(UserAwnsers["none", "contra", "N/A","pro","V/S","V/S"])
+        console.log(SelecVragen[true, false, false, false])
+        console.log(SelecParties[true, true, false, true])
+    </script> -->
 </html>

@@ -5,9 +5,9 @@
         <title>StemWijzer</title>
         <link href='https://fonts.googleapis.com/css?family=Bree Serif' rel='stylesheet'>
         <script src="https://kit.fontawesome.com/89f724c9b8.js" crossorigin="anonymous"></script>
-        <script src="http://stemwijzer.dvc-icta.nl/data.js"></script>
-        <!-- <script src="../js.js"></script> -->
-        <script src="../java.js"></script>
+        <!-- <script src="http://stemwijzer.dvc-icta.nl/data.js"></script> -->
+        <script src="../voorbeeld.js"></script>
+        
         
     </head>
     <script>
@@ -24,7 +24,7 @@
                         <div id="StartTitleContainer"><span id="StartTitleS" class="StartTitle">Stem</span><span id="StartTitleW"  class="StartTitle">Wijzer</span></div>
                         <div id="StartSubTitle">Tweede Kamer&shy;verkiezingen 2021</div>
                         <div id="StartSubSubTitle">Test je politieken voorkeur aan de hand van 30 stellingen</div>
-                        <button id="ButtonStart" class="ButtonAntwoord ButtonBorder" onclick="ButtonStart()">Start</button>
+                        <button id="ButtonStart" class="ButtonAntwoord ButtonBorder">Start</button>
                     </div>
                     <div id="Block1"></div>
                 </div>
@@ -45,10 +45,10 @@
                         <div id="Vraag">you shouldn't see this</div>
                     </div>
                     <div id="ButtonContainer">
-                        <button id="ButtonEens" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('pro')"><i class="fas fathumbs fa-flip-vertical fa-thumbs-down"></i>Eens</button>
-                        <button id="ButtonGvb" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('none')">Geen van Bijde</button>
-                        <button id="ButtonOneens" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('contra')"><i class="fas fathumbs fa-flip-horizontal fa-thumbs-down"></i>Oneens</button>
-                        <button id="ButtonOverslaan" class="ButtonBorder"  onclick="AwnserSubmit('N/A')">Overslaan &nbsp &nbsp<i id="AnimateArrow" class="fas fa-arrow-right"></i></button>
+                        <button id="ButtonEens" class="ButtonAntwoord ButtonBorder"><i class="fas fathumbs fa-flip-vertical fa-thumbs-down"></i>Eens</button>
+                        <button id="ButtonGvb" class="ButtonAntwoord ButtonBorder">Geen van Bijde</button>
+                        <button id="ButtonOneens" class="ButtonAntwoord ButtonBorder"><i class="fas fathumbs fa-flip-horizontal fa-thumbs-down"></i>Oneens</button>
+                        <button id="ButtonOverslaan" class="ButtonBorder">Overslaan &nbsp &nbsp<i id="AnimateArrow" class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                     <div id="SpecVraagContainer">
                         <div>
                             <div id="SpecVraag">Zijn er onderwerpen die je extra belangrijk vindt?</div>
-                            <button id="ButtonVolg" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('VS')">Volgende Stap</button>
+                            <button id="ButtonVolg" class="ButtonAntwoord ButtonBorder" >Volgende Stap</button>
                         </div>
                         <div id="SpecSCount"><span>0</span><span>/0 stellingen geslecteerd</span></div>
                     </div>
@@ -66,12 +66,7 @@
                 <div class="SpecContainer">
                     <div id="SC1S" class="SpecCollumn"></div>
                     <div id="SC2S" class="SpecCollumn"></div>
-                    <div id="SC3S" class="SpecCollumn"></div>
-                    <script id="CreateButtons">
-                        SpecCreateButton("S"); 
-                        document.getElementById("SpecSCount").lastChild.innerHTML = "/" + subjects.length + " stellingen geslecteerd";
-                    </script>
-                    
+                    <div id="SC3S" class="SpecCollumn"></div>                    
                 </div>
                 
             </div>
@@ -80,25 +75,29 @@
                     <div id="SpecVraagContainer">
                         <div>
                             <div id="SpecVraag">Welke partijen wil je mee nemen in het resultaat?</div>
-                            <button id="ButtonVolg" class="ButtonAntwoord ButtonBorder" onclick="AwnserSubmit('VS')">Volgende Stap</button>
+                            <button id="ButtonVolg" class="ButtonAntwoord ButtonBorder">Volgende Stap</button>
                         </div>
                         <div id="SpecSCount"><span></span></div>
                     </div>
     
                 </div>
                 <div class="SpecContainer">
+                    <!-- <div>
+                        <button >
+                            <span class="fa-stack">
+                                <i class="fas facolorbox fa-square fa-stack-2x fa-2x"></i>
+                                <i class="SpecNotSelected facolorcheck fas fa-check fa-stack-1x"></i>
+                            </span>
+                            <span></span>
+                        </button>
+                    </div> -->
                     <div id="SC1P" class="SpecCollumn"></div>
                     <div id="SC2P" class="SpecCollumn"></div>
-                    <div id="SC3P" class="SpecCollumn"></div>
-                    <script id="CreateButtons">
-                        SpecCreateButton("P"); 
-                        
-                    </script>
-                    
+                    <div id="SC3P" class="SpecCollumn"></div>                    
                 </div>
             </div> 
         </div>
         
     </body>
-
+    <script src="../java.js"></script>
 </html>

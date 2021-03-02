@@ -6,6 +6,14 @@ progressvar = (100 / (subjects.length + 3));
 SpecSCount = 0;
 
 
+    document.getElementById("ButtonStart").onclick = function() {ButtonStart()}
+    document.getElementById("ButtonTerug").onclick = function() {GoBack()}
+    document.getElementById("ButtonEens").onclick = function() {AwnserSubmit("pro")}
+    document.getElementById("ButtonGvb").onclick = function() {AwnserSubmit("none")}
+    document.getElementById("ButtonOneens").onclick = function() {AwnserSubmit("contra")}
+    document.getElementById("ButtonOverslaan").onclick = function() {AwnserSubmit("N/A")}
+    document.getElementById("ButtonVolg").onclick = function() {AwnserSubmit("VS")}
+
 function ButtonStart()
 {
     inputs++
@@ -18,9 +26,9 @@ function ButtonStart()
     /* console.log(inputs) */
 }
 
-function AwnserSubmit(x)
+function AwnserSubmit(awnser)
 {  
-    UserAwnsers[inputs-1] = x;
+    UserAwnsers[inputs-1] = awnser;
     inputs++;
     console.log(UserAwnsers);
     console.log(SelecVragen);
@@ -36,16 +44,16 @@ function AwnserSubmit(x)
         document.getElementById("SubContainer").style.display = "none";
         document.getElementById("SectionSpecS").style.display = "block";
         subjects.forEach(CheckIfEmpty)
-        function CheckIfEmpty(x)
+        function CheckIfEmpty(awnser)
         {
-            if(UserAwnsers[subjects.indexOf(x)] == "N/A")
+            if(UserAwnsers[subjects.indexOf(awnser)] == "N/A")
             {
-                document.getElementById("SBS" + subjects.indexOf(x)).parentElement.parentElement.style.display = "none"
-                SelecVragen[subjects.indexOf(x)] = false;
+                document.getElementById("SBS" + subjects.indexOf(awnser)).parentElement.parentElement.style.display = "none"
+                SelecVragen[subjects.indexOf(awnser)] = false;
             }
             else
             {
-                document.getElementById("SBS" + subjects.indexOf(x)).parentElement.parentElement.style.display = "inline-block"
+                document.getElementById("SBS" + subjects.indexOf(awnser)).parentElement.parentElement.style.display = "inline-block"
             }
         }
         
@@ -96,13 +104,14 @@ function GoBack()
     
 }
 
-function NextQuestion(x)
+function NextQuestion(IndexVraag)
 {
-    document.getElementById("VraagOnderwerp").innerHTML = subjects[x].title;
-    document.getElementById("Vraag").innerHTML = subjects[x].statement;
+    document.getElementById("VraagOnderwerp").innerHTML = subjects[IndexVraag].title;
+    document.getElementById("Vraag").innerHTML = subjects[IndexVraag].statement;
 }
 function SpecCreateButton(y)
 {
+    
     if(y == "S")
     {
         subjects.forEach(Create)
@@ -190,11 +199,11 @@ function SpecCreateButton(y)
             }
             
         }
-        
-        
     }
-    document.getElementById("CreateButtons").remove()
 }
+SpecCreateButton("S")
+document.getElementById("SpecSCount").lastChild.innerHTML = "/" + subjects.length + " stellingen geslecteerd";
+SpecCreateButton("P")
 
 function SpecVraagS()
 {
@@ -235,5 +244,7 @@ function SpecVraagP()
     }
     console.log(SelecParties)
 }
+
+
 
 
