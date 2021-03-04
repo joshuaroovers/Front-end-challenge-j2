@@ -457,6 +457,7 @@ function CalcResults()
                     gradient = "conic-gradient(rgb(50, 50, 255) 0 " + percentage +"%, rgb(190, 190, 255) 0 "+ (360 - percentage) +"% )"
 
                     TopResult.firstElementChild.style.backgroundImage = gradient/* WERKT NIET WHY  - blijkbaar is deg gw raar maar % werkt wel goed */
+                    TopResult.firstElementChild.style.transition = "background-image 1s"
                     TopResult.firstElementChild.firstElementChild.firstElementChild.innerHTML = percentage + "%";
 
                     TopResult.lastElementChild.firstElementChild.innerHTML = parties[ScoreUnsorted.indexOf(ScoreIndex)].name;

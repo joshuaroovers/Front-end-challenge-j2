@@ -418,11 +418,12 @@ body
 
 .PercentileContainer
 {
-    padding: 10px;
-    width: 140px;
-    height: 140px;
+    padding: 20px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     background-color: rgb(190, 190, 255);
+    background-image: conic-gradient(rgb(190, 190, 255) 0deg 0%, rgb(50, 50, 255) 0deg 0deg);
 }
 .PercentileSubContainer
 {
@@ -456,7 +457,7 @@ body
 }
 .PercentileAltResult
 {
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
     margin: 10px 0px 10px 0px;
     border-radius: 10px;
     background-color: ghostwhite;
@@ -466,13 +467,12 @@ body
 {
     display: inline-block;
     width: 90%;
-    height: 10px;
+    height: 20px;
     background-color: rgb(190, 190, 255);
 }
 .PercentileBar
 {
     height: 100%;
-/*     width: 55%; */
     background-color: rgb(50, 50, 255);
 }
 .PercAlt
