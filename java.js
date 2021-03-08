@@ -262,14 +262,12 @@ function SpecVraagP()
     {
         SelecParties[index] = false
         SpecPCount--;
-        document.getElementById("SpecPCount").innerHTML = SpecPCount/*  */
         document.getElementById(SBid).classList.replace("SpecSelected", "SpecNotSelected")
     }
     else if(SelecParties[index] != parties[index].name)
     {
         SelecParties[index] = parties[index].name
         SpecPCount++;
-        document.getElementById("SpecPCount").innerHTML = SpecPCount/*  */
         document.getElementById(SBid).classList.replace("SpecNotSelected", "SpecSelected")
     }
     console.log(SelecParties)
@@ -291,14 +289,12 @@ function ButtonGroup(Spec)
                 {
                     document.getElementById(SBid).classList.replace("SpecNotSelected", "SpecSelected")
                     SpecPCount++;
-                    document.getElementById("SpecPCount").innerHTML = SpecPCount/*  */
                     SelecParties[parties.indexOf(PartyLT)] = PartyLT.name
                 }
                 else if(PartyLT.name != "Niet Stemmers" && SelecParties[parties.indexOf(PartyLT)] == PartyLT.name)
                 {
                     document.getElementById(SBid).classList.replace("SpecSelected", "SpecNotSelected")
                     SpecPCount--;
-                    document.getElementById("SpecPCount").innerHTML = SpecPCount/*  */
                     SelecParties[parties.indexOf(PartyLT)] = false
                 }
             }
@@ -316,7 +312,6 @@ function ButtonGroup(Spec)
                 {
                     document.getElementById(SBid).classList.replace("SpecSelected", "SpecNotSelected")
                     SpecPCount--;
-                    document.getElementById("SpecPCount").innerHTML = SpecPCount/*  */
                     SelecParties[parties.indexOf(PartyLF)] = false
                 }
             }
@@ -337,14 +332,12 @@ function ButtonGroup(Spec)
                 {
                     document.getElementById(SBid).classList.replace("SpecNotSelected", "SpecSelected")
                     SpecPCount++;
-                    document.getElementById("SpecPCount").innerHTML = SpecPCount/*  */
                     SelecParties[parties.indexOf(PartyST)] = PartyST.name
                 }
                 else if(PartyST.name != "Niet Stemmers" && SelecParties[parties.indexOf(PartyST)] == PartyST.name)
                 {
                     document.getElementById(SBid).classList.replace("SpecSelected", "SpecNotSelected")
                     SpecPCount--;
-                    document.getElementById("SpecPCount").innerHTML = SpecPCount/*  */
                     SelecParties[parties.indexOf(PartyST)] = false
                 }
             }
@@ -362,7 +355,6 @@ function ButtonGroup(Spec)
                 {
                     document.getElementById(SBid).classList.replace("SpecSelected", "SpecNotSelected");
                     SpecPCount--;
-                    document.getElementById("SpecPCount").innerHTML = SpecPCount/*  */
                     SelecParties[parties.indexOf(PartySF)] = false;
                 }
             }
@@ -456,7 +448,7 @@ function CalcResults()
                     percentage = Math.round(ScoreSorted / subjects.length * 100)
                     gradient = "conic-gradient(rgb(50, 50, 255) 0 " + percentage +"%, rgb(190, 190, 255) 0 "+ (360 - percentage) +"% )"
 
-                    TopResult.firstElementChild.style.backgroundImage = gradient/* WERKT NIET WHY  - blijkbaar is deg gw raar maar % werkt wel goed */
+                    TopResult.firstElementChild.style.backgroundImage = gradient
                     TopResult.firstElementChild.style.transition = "background-image 1s"
                     TopResult.firstElementChild.firstElementChild.firstElementChild.innerHTML = percentage + "%";
 
@@ -495,19 +487,6 @@ function CalcResults()
                     PercBar.style.width = percentage + "%"
                     PercBarCon.appendChild(PercBar)
 
-
-
-
-
-                    /* <div class="PercentileAltResult">
-                        <div>
-                            <div class="PerentilceAltBarContainer">
-                                <div class="PercentileBar"></div>
-                            </div>
-                            <div class="PercAlt">55%</div>
-                        </div>
-                        <div>Forum van Democratie</div>
-                    </div> */
                 }
             }
         }
