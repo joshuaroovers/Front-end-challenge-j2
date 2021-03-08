@@ -14,16 +14,18 @@ SpecSCount = 0;
 SpecPCount = 0;
 
 
-    document.getElementById("ButtonStart").onclick = function() {ButtonStart()}
-    document.getElementById("ButtonTerug").onclick = function() {GoBack()}
-    document.getElementById("ButtonEens").onclick = function() {AwnserSubmit("pro")}
-    document.getElementById("ButtonGvb").onclick = function() {AwnserSubmit("none")}
-    document.getElementById("ButtonOneens").onclick = function() {AwnserSubmit("contra")}
-    document.getElementById("ButtonOverslaan").onclick = function() {AwnserSubmit("NaN")}
-    document.getElementById("ButtonVolgS").onclick = function() {AwnserSubmit("VS")}
-    document.getElementById("ButtonVolgP").onclick = function() {AwnserSubmit("VS")}
-    document.getElementById("ButtonSpecGroot").onclick = function() {ButtonGroup("L")}
-    document.getElementById("ButtonSpecSeculier").onclick = function() {ButtonGroup("S")}
+document.getElementById("ButtonStart").onclick = function() {ButtonStart()}
+document.getElementById("ButtonTerug").onclick = function() {GoBack()}
+
+document.getElementById("ButtonEens").onclick = function() {AwnserSubmit("pro")}
+document.getElementById("ButtonGvb").onclick = function() {AwnserSubmit("none")}
+document.getElementById("ButtonOneens").onclick = function() {AwnserSubmit("contra")}
+document.getElementById("ButtonOverslaan").onclick = function() {AwnserSubmit("NaN")}
+document.getElementById("ButtonVolgS").onclick = function() {AwnserSubmit("VS")}
+document.getElementById("ButtonVolgP").onclick = function() {AwnserSubmit("VS")}
+
+document.getElementById("ButtonSpecGroot").onclick = function() {ButtonGroup("L")}
+document.getElementById("ButtonSpecSeculier").onclick = function() {ButtonGroup("S")}
 
 function ButtonStart()
 {
@@ -35,6 +37,7 @@ function ButtonStart()
     document.getElementById("SectionVragen").style.display = "unset";
     NextQuestion(inputs-1)
 }
+/* Onclick van de start button op de start pagina */
 
 function AwnserSubmit(awnser)
 {  
@@ -88,6 +91,7 @@ function AwnserSubmit(awnser)
     }
     
 }
+/* Onclick van de eens, oneens, geen van bijde, overslaan en volgende knop slaat het antwoord op en laat het goede scherm zien  */
 function GoBack()
 {
     inputs--;
@@ -127,12 +131,13 @@ function GoBack()
     }
     
 }
-
+/* spreekt voor zich maar onclick van de terug button */
 function NextQuestion(IndexVraag)
 {
     document.getElementById("VraagOnderwerp").innerHTML = subjects[IndexVraag].title;
     document.getElementById("Vraag").innerHTML = subjects[IndexVraag].statement;
 }
+/* laat de goede vraag zien */
 function SpecCreateButton(Spec)
 {
     
@@ -214,7 +219,7 @@ function SpecCreateButton(Spec)
 SpecCreateButton("S")
 document.getElementById("SpecSCount").lastChild.innerHTML = "/" + subjects.length + " stellingen geslecteerd";
 SpecCreateButton("P")
-
+/* maakt de vraag weight en partij weight buttons aan */
 function SpecVraagS()
 {
     fullid = this.id.split("");
@@ -244,7 +249,7 @@ function SpecVraagS()
         document.getElementById("SpecSCount").firstChild.innerHTML = SpecSCount
     }
 }
-
+/* onclick van vraag weight buttons + toggled antwoord */
 function SpecVraagP()
 {
     fullid = this.id.split("");
@@ -272,7 +277,7 @@ function SpecVraagP()
     }
     console.log(SelecParties)
 }
-
+/* onclick van partij weight buttons + toggled antwoord */
 function ButtonGroup(Spec)
 {   
     if(Spec == "L")
@@ -362,7 +367,7 @@ function ButtonGroup(Spec)
         }
     }
 }
-
+/* onclick van grote partijen en seculier partijen buttons + toggled antwoorden */
 function CalcResults()
 {
     SelecParties.forEach(LoopPerParty)
@@ -493,7 +498,7 @@ function CalcResults()
     }
 
 }
-
+/* naam spreekt voor zich + maakt het juiste aantal non top 3 resultaat containers aan */
 
 
 
