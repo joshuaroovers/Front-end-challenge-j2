@@ -288,9 +288,10 @@ function ButtonGroup(Spec)
             parties.forEach(Checksize)
             function Checksize(PartyLT)
             {
+                grotepartij = 1;
                 SBid = "SBP" + parties.indexOf(PartyLT);
         
-                if(PartyLT.size >= 10 && PartyLT.name != "Niet Stemmers" && SelecParties[parties.indexOf(PartyLT)] != PartyLT.name)
+                if(PartyLT.size >= grotepartij && PartyLT.name != "Niet Stemmers" && SelecParties[parties.indexOf(PartyLT)] != PartyLT.name)
                 {
                     document.getElementById(SBid).classList.replace("SpecNotSelected", "SpecSelected")
                     SpecPCount++;
@@ -313,7 +314,7 @@ function ButtonGroup(Spec)
             {
                 SBid = "SBP" + parties.indexOf(PartyLF);
         
-                if(PartyLF.size >= 10 && PartyLF.name != "Niet Stemmers" && SelecParties[parties.indexOf(PartyLF)] == PartyLF.name)
+                if(PartyLF.size >= grotepartij && PartyLF.name != "Niet Stemmers" && SelecParties[parties.indexOf(PartyLF)] == PartyLF.name)
                 {
                     document.getElementById(SBid).classList.replace("SpecSelected", "SpecNotSelected")
                     SpecPCount--;
