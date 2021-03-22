@@ -325,9 +325,9 @@ body
 }
 .SpecCollumn
 {
+    float: left;
     width: 28.95%;
     padding: 0px 2% 0px 2%;
-    display: inline-block;
 }
 .ButtonSpec
 {

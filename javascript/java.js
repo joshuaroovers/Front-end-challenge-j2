@@ -27,6 +27,7 @@ document.getElementById("ButtonVolgP").onclick = function() {AwnserSubmit("VS")}
 document.getElementById("ButtonSpecGroot").onclick = function() {ButtonGroup("L")}
 document.getElementById("ButtonSpecSeculier").onclick = function() {ButtonGroup("S")}
 
+/* Onclick van de start button op de start pagina */
 function ButtonStart()
 {
     inputs++
@@ -37,8 +38,7 @@ function ButtonStart()
     document.getElementById("SectionVragen").style.display = "unset";
     NextQuestion(inputs-1)
 }
-/* Onclick van de start button op de start pagina */
-
+/* Onclick van de eens, oneens, geen van bijde, overslaan en volgende knop slaat het antwoord op en laat het goede scherm zien  */
 function AwnserSubmit(awnser)
 {  
     UserAwnsers[inputs-1] = awnser;
@@ -91,7 +91,7 @@ function AwnserSubmit(awnser)
     }
     
 }
-/* Onclick van de eens, oneens, geen van bijde, overslaan en volgende knop slaat het antwoord op en laat het goede scherm zien  */
+/* spreekt voor zich maar onclick van de terug button */
 function GoBack()
 {
     inputs--;
@@ -121,9 +121,7 @@ function GoBack()
         {
             PartyScore[x] = 0;
         }
-        document.getElementById("SectionResults").removeChild(document.getElementById("PercentileAltContainer"))
-        
-        
+        document.getElementById("SectionResults").removeChild(document.getElementById("PercentileAltContainer"))   
     }
     else
     {
@@ -131,13 +129,13 @@ function GoBack()
     }
     
 }
-/* spreekt voor zich maar onclick van de terug button */
+/* laat de goede vraag zien */
 function NextQuestion(IndexVraag)
 {
     document.getElementById("VraagOnderwerp").innerHTML = subjects[IndexVraag].title;
     document.getElementById("Vraag").innerHTML = subjects[IndexVraag].statement;
 }
-/* laat de goede vraag zien */
+/* maakt de vraag weight en partij weight buttons aan */
 function SpecCreateButton(Spec)
 {
     
@@ -219,7 +217,8 @@ function SpecCreateButton(Spec)
 SpecCreateButton("S")
 document.getElementById("SpecSCount").lastChild.innerHTML = "/" + subjects.length + " stellingen geslecteerd";
 SpecCreateButton("P")
-/* maakt de vraag weight en partij weight buttons aan */
+
+/* onclick van vraag weight buttons + toggled antwoord */
 function SpecVraagS()
 {
     fullid = this.id.split("");
@@ -249,7 +248,7 @@ function SpecVraagS()
         document.getElementById("SpecSCount").firstChild.innerHTML = SpecSCount
     }
 }
-/* onclick van vraag weight buttons + toggled antwoord */
+/* onclick van partij weight buttons + toggled antwoord */
 function SpecVraagP()
 {
     fullid = this.id.split("");
@@ -277,7 +276,7 @@ function SpecVraagP()
     }
     console.log(SelecParties)
 }
-/* onclick van partij weight buttons + toggled antwoord */
+/* onclick van grote partijen en seculier partijen buttons + toggled antwoorden */
 function ButtonGroup(Spec)
 {   
     if(Spec == "L")
@@ -368,7 +367,7 @@ function ButtonGroup(Spec)
         }
     }
 }
-/* onclick van grote partijen en seculier partijen buttons + toggled antwoorden */
+/* naam spreekt voor zich + maakt het juiste aantal non top 3 resultaat containers aan */
 function CalcResults()
 {
     SelecParties.forEach(LoopPerParty)
@@ -499,7 +498,3 @@ function CalcResults()
     }
 
 }
-/* naam spreekt voor zich + maakt het juiste aantal non top 3 resultaat containers aan */
-
-
-
