@@ -27,15 +27,13 @@ document.getElementById("ButtonVolgP").onclick = function() {AwnserSubmit("VS")}
 document.getElementById("ButtonSpecGroot").onclick = function() {ButtonGroup("L")}
 document.getElementById("ButtonSpecSeculier").onclick = function() {ButtonGroup("S")}
 
+document.getElementById("SectionStart").classList.toggle("HideSection")
 /* Onclick van de start button op de start pagina */
 function ButtonStart()
 {
     inputs++
-    document.getElementById("progressbar").style.width = (inputs*progressvar) + "%";
-    document.getElementById("SectionProgressbar").style.display = "block";
     document.getElementById("MainContainer").style.backgroundColor = "whitesmoke";
-    document.getElementById("SectionStart").style.display = "none";
-    document.getElementById("SectionVragen").style.display = "unset";
+    ShowPage("Forward")
     NextQuestion(inputs-1)
 }
 /* Onclick van de eens, oneens, geen van bijde, overslaan en volgende knop slaat het antwoord op en laat het goede scherm zien  */
@@ -43,51 +41,47 @@ function AwnserSubmit(awnser)
 {  
     UserAwnsers[inputs-1] = awnser;
     inputs++;
-    document.getElementById("progressbar").style.width = (inputs*progressvar) + "%";
     console.log(inputs)
-    if(inputs <= subjects.length)
-    {
-        NextQuestion(inputs-1);
-    }
-    else if(inputs == subjects.length + 1)
-    {
-        document.getElementById("SubContainer").style.display = "none";
-        document.getElementById("SectionSpecS").style.display = "block";
-        subjects.forEach(CheckIfEmpty)
-        function CheckIfEmpty(awnser)
-        {
-            if(UserAwnsers[subjects.indexOf(awnser)] == "NaN")
-            {
-                document.getElementById("SBS" + subjects.indexOf(awnser)).parentElement.parentElement.style.display = "none"
-                SelecVragen[subjects.indexOf(awnser)] = false;
-            }
-            else
-            {
-                document.getElementById("SBS" + subjects.indexOf(awnser)).parentElement.parentElement.style.display = "inline-block"
-            }
-        }
-        
-    }
-    else if(inputs == subjects.length + 2)
-    {
-        document.getElementById("SectionSpecS").style.display = "none";
-        document.getElementById("SectionSpecP").style.display = "block";
-    }
-    else if(inputs == subjects.length + 3)
+
+    if(inputs == subjects.length + 3)
     {
         if(SpecPCount > 2)
         {
-            document.getElementById("SectionSpecP").style.display = "none";
-            document.getElementById("SectionResults").style.display = "block";
+            ShowPage("Forward")
             CalcResults()   
         }
         else
         {
             alert("Minimum van 3 partijen verijst")
             inputs--;
-            document.getElementById("progressbar").style.width = (inputs*progressvar) + "%";
         }
           
+    }
+    else 
+    {  
+        if(inputs <= subjects.length)
+        {
+            NextQuestion(inputs-1);
+        }
+        else if(inputs == subjects.length + 1)
+        {
+            
+            subjects.forEach(CheckIfEmpty)
+            function CheckIfEmpty(awnser)
+            {
+                if(UserAwnsers[subjects.indexOf(awnser)] == "NaN")
+                {
+                    document.getElementById("SBS" + subjects.indexOf(awnser)).parentElement.parentElement.style.display = "none"
+                    SelecVragen[subjects.indexOf(awnser)] = false;
+                }
+                else
+                {
+                    document.getElementById("SBS" + subjects.indexOf(awnser)).parentElement.parentElement.style.display = "inline-block"
+                }
+            } 
+        }
+
+        ShowPage("Forward")
     }
     
 }
@@ -95,28 +89,12 @@ function AwnserSubmit(awnser)
 function GoBack()
 {
     inputs--;
-    document.getElementById("progressbar").style.width = (inputs*progressvar) + "%";
     if(inputs == 0)
     {
         document.getElementById("MainContainer").style.backgroundColor = "";
-        document.getElementById("SectionStart").style.display = "block";
-        document.getElementById("SectionProgressbar").style.display = "none";
-        document.getElementById("SectionVragen").style.display = "none";
-    }
-    else if(inputs == subjects.length)
-    {
-        document.getElementById("SubContainer").style.display = "block";
-        document.getElementById("SectionSpecS").style.display = "none";
-    }
-    else if(inputs == subjects.length + 1)
-    {
-        document.getElementById("SectionSpecS").style.display = "block";
-        document.getElementById("SectionSpecP").style.display = "none";
     }
     else if(inputs == subjects.length + 2)
     {
-        document.getElementById("SectionSpecP").style.display = "block";
-        document.getElementById("SectionResults").style.display = "none";
         for(x = 0; x < PartyScore.length; x++)
         {
             PartyScore[x] = 0;
@@ -127,7 +105,34 @@ function GoBack()
     {
         NextQuestion(inputs-1);
     }
+    ShowPage("Back")
     
+}
+function ShowPage(ForwardBack)
+{
+    document.getElementById("progressbar").style.width = (inputs*progressvar) + "%";
+    
+    if(inputs == 1 && ForwardBack == "Forward" || inputs == 0 && ForwardBack == "Back")
+    {
+        document.getElementById("SectionStart").classList.toggle("HideSection")
+        document.getElementById("SectionProgressbar").classList.toggle("HideSection")
+        document.getElementById("SectionVragen").classList.toggle("HideSection")
+    }
+    else if(inputs == subjects.length + 1 && ForwardBack == "Forward" || inputs == subjects.length && ForwardBack == "Back")
+    {
+        document.getElementById("SectionVragen").classList.toggle("HideSection")  
+        document.getElementById("SectionSpecS").classList.toggle("HideSection")
+    }
+    else if (inputs == subjects.length + 2 && ForwardBack == "Forward" || inputs == subjects.length + 1 && ForwardBack == "Back")
+    {
+        document.getElementById("SectionSpecS").classList.toggle("HideSection")
+        document.getElementById("SectionSpecP").classList.toggle("HideSection")
+    }
+    else if (inputs == subjects.length + 3 && ForwardBack == "Forward" || inputs == subjects.length + 2 && ForwardBack == "Back")
+    {
+        document.getElementById("SectionSpecP").classList.toggle("HideSection")
+        document.getElementById("SectionResults").classList.toggle("HideSection")
+    }
 }
 /* laat de goede vraag zien */
 function NextQuestion(IndexVraag)
