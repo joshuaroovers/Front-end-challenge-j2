@@ -9,7 +9,7 @@ body
 #MainContainer
 {
     width: 70%;
-    height: 700px;
+    min-height: 700px;
     margin-left: 15%;
     margin-right: 15%;
 }
@@ -21,7 +21,7 @@ body
 #SectionStart
 {
     display: block;
-    height: 100%;
+    height: 700px;
     width: 100%;
 }
 #BlockLeft
@@ -318,7 +318,7 @@ body
 {
     background-color: gainsboro;
     padding: 3%;
-    height: 650px;
+    height: 700px;
     width: 94%;
 }
 #SC3S, #SC3P
@@ -415,7 +415,7 @@ body
 #SectionResults
 {
     display: block;
-    padding: 0px 20% 0px 20%;
+    padding: 0px 20% 50px 20%;
     width: 60%;
 }
 #ResultsContainer
