@@ -101,7 +101,7 @@ function GoBack()
         }
         document.getElementById("SectionResults").removeChild(document.getElementById("PercentileAltContainer"))   
     }
-    else
+    else if(inputs < subjects.length)
     {
         NextQuestion(inputs-1);
     }
