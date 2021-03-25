@@ -36,7 +36,7 @@ function ButtonStart()
     ShowPage("Forward")
     NextQuestion(inputs-1)
 }
-/* Onclick van de eens, oneens, geen van bijde, overslaan en volgende knop slaat het antwoord op en laat het goede scherm zien  */
+/* Onclick van de eens, oneens, geen van bijde, overslaan en volgende knop slaat het antwoord op*/
 function AwnserSubmit(awnser)
 {  
     UserAwnsers[inputs-1] = awnser;
@@ -108,6 +108,7 @@ function GoBack()
     ShowPage("Back")
     
 }
+/*laat het goede scherm zien */
 function ShowPage(ForwardBack)
 {
     document.getElementById("progressbar").style.width = (inputs*progressvar) + "%";
